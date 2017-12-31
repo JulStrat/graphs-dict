@@ -12,11 +12,13 @@ class UnionFind:
         Cambridge, London.
     """
 
-    def __init__(self):
+    def __init__(self, elements=None):
         """Disjoint-set initialization."""
-        self.parent = dict()
-        self.rank = dict()
-        self.size = 0
+        if elements is None:
+            elements = []
+        self.parent = dict(zip(elements, elements))
+        self.rank = dict.fromkeys(elements, 0)
+        self.size = len(self.parent)
     
     def size(self):
         """Number of disjoint subsets."""
