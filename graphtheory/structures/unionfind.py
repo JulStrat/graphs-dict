@@ -16,12 +16,18 @@ class UnionFind:
         """Disjoint-set initialization."""
         self.parent = dict()
         self.rank = dict()
+        self.size = 0
+    
+    def size(self):
+        """Number of disjoint subsets."""
+        return self.size
 
     def create(self, x):
         """Make a set containing only a given element."""
         if x not in self.parent:
             self.parent[x] = x
             self.rank[x] = 0
+            self.size += 1
 
     def find(self, x):
         """Determine which subset an element is in."""
@@ -35,6 +41,7 @@ class UnionFind:
         y = self.find(y)
         if x == y:   # the same set
             return
+        self.size -= 1
         if self.rank[x] > self.rank[y]:
             self.parent[y] = x
         else:
