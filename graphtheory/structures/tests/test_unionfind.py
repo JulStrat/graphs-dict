@@ -25,14 +25,17 @@ class TestUnionFind(unittest.TestCase):
 
     def test_unionfind_init(self):
         algorithm = UnionFind(range(10))
+        self.assertTrue(algorithm.size() == 10)
         pairs = [(0, 1), (2, 3), (4, 5), (6, 7), (8, 9), (3, 1)]
         for a, b in pairs:
             algorithm.union(a, b)
+        self.assertTrue(algorithm.size() == 4)
         self.assertTrue(algorithm.find(1) == algorithm.find(2))
         self.assertTrue(algorithm.find(7) != algorithm.find(9))
         pairs = [(7, 5), (3, 7), (8, 7)]
         for a, b in pairs:
             algorithm.union(a, b)
+        self.assertTrue(algorithm.size() == 1)
         self.assertTrue(algorithm.find(0) == algorithm.find(6))
         self.assertTrue(algorithm.find(1) == algorithm.find(9))
 
