@@ -1,0 +1,15 @@
+language: python
+
+python:
+  - "2.7"
+
+branches:
+  only:
+    - random
+    - master
+
+before_install:
+  - mkdir tests_out
+    
+script:
+  - ./tests_runner.sh

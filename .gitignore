@@ -23,4 +23,7 @@
 # listings
 *.lol
 
+# Tests out directory
+tests_out/
+
 # EOF
