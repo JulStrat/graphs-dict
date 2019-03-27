@@ -1,3 +1,5 @@
+[![Build Status](https://travis-ci.org/JulStrat/graphs-dict.svg?branch=random)](https://travis-ci.org/JulStrat/graphs-dict)
+
 graphtheory package (graphs-dict repo)
 ======================================
 
